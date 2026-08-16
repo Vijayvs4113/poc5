@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: product-catalogue
-          image: neeleshram/product-catalogue
+          image: vijayvs6383/product-catalogue
           ports:
             - containerPort: 80
           volumeMounts:
