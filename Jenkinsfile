@@ -68,9 +68,9 @@ pipeline {
             steps {
                 echo 'Deploying Product Catalogue to Kubernetes...'
                 sh '''
-                    kubectl apply -f k8s/configmap.yml
-                    kubectl apply -f k8s/deployment.yml
-                    kubectl apply -f k8s/service.yml
+                    kubectl apply -f kubernetes/configmap.yml
+                    kubectl apply -f kubernetes/deployment.yml
+                    kubectl apply -f kubernetes/service.yml
                 '''
             }
         }
