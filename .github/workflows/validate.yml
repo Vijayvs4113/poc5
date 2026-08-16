@@ -2,10 +2,10 @@ name: Product Catalogue Validation
 on:
   push:
     branches:
-      - masterj
+      - main
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest
