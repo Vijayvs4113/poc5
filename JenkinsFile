@@ -22,9 +22,9 @@ pipeline {
                     test -f Dockerfile
                     test -f nginx.conf
                     test -f Jenkinsfile
-                    test -f k8s/configmap.yml
-                    test -f k8s/deployment.yml
-                    test -f k8s/service.yml
+                    test -f kubernetes/configmap.yml
+                    test -f kubernetes/deployment.yml
+                    test -f kubernetes/service.yml
                 '''
                 echo 'Validation successful.'
             }
