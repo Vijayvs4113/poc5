@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product-catalogue-config
+data:
+  config.json: |
+    {
+      "appTitle": "Product Catalogue - DevOps POC"
+    }

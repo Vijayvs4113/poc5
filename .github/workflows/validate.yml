@@ -1,0 +1,24 @@
+name: Product Catalogue Validation
+on:
+  push:
+    branches:
+      - masterj
+  pull_request:
+    branches:
+      - master
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f app.js
+          test -f Dockerfile
+          test -f nginx.conf
+          echo "All required files are present"
+      - name: Validate Docker build
+        run: docker build --tag product-catalogue-validation .

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-catalogue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: product-catalogue
+  template:
+    metadata:
+      labels:
+        app: product-catalogue
+    spec:
+      containers:
+        - name: product-catalogue
+          image: neeleshram/product-catalogue
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/share/nginx/html/config.json
+              subPath: config.json
+      volumes:
+        - name: config-volume
+          configMap:
+            name: product-catalogue-config
+
